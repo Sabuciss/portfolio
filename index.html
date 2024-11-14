@@ -17,11 +17,11 @@
             background-color: #6b4897;
             color: black; /* Set all text color to black */
             line-height: 1.6;
+            text-align: center; /* Center all text in the body */
         }
 
         header {
             color: rgb(189, 181, 213);
-            text-align: center;
             padding: 40px 0;
         }
 
@@ -34,33 +34,17 @@
             margin-top: 10px;
         }
 
-        /* About Section */
-        .about {
-            background-color: rgb(204, 204, 255);
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-        }
-
         /* Table Styles */
         table {
             width: 80%;
             margin: 20px auto;
             border-collapse: collapse;
+            text-align: center; /* Center text in table */
         }
 
         table th, table td {
             padding: 10px;
             border: 1px solid rgb(0, 0, 0);
-            text-align: center;
         }
 
         table th {
@@ -68,65 +52,10 @@
             color: white;
         }
 
-        /* Projects Section */
-        .projects {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .projects h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .project-item {
-            display: inline-block;
-            width: 45%;
-            background-color: rgb(196, 187, 240);
-            margin: 10px;
-            padding: 20px;
-            color: rgb(15, 11, 17);
-            text-align: center;
-        }
-
-        .project-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .project-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: rgb(189, 181, 213);
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .contact ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .contact li {
-            font-size: 1.1rem;
-            margin: 5px 0;
-        }
-
         /* Extra Information Section */
         .extra-info {
             padding: 40px 20px;
-            text-align: center;
-            background-color: rgb(245, 245, 245);
+            background-color: #835af1;
         }
 
         .extra-info h2 {
@@ -139,10 +68,25 @@
             margin-bottom: 20px;
         }
 
-        .extra-info img {
-            max-width: 200px;
-            border-radius: 8px;
-            margin-top: 20px;
+        /* Animation for sliding and scaling the image */
+        @keyframes slide-grow {
+            0% {
+                transform: translateX(0) scale(1); /* Start position: no movement, normal size */
+            }
+            50% {
+                transform: translateX(50%) scale(1.5); /* Move to the right, and grow */
+            }
+            100% {
+                transform: translateX(100%) scale(1); /* Move further right and return to original size */
+            }
+        }
+
+        /* Header Image Animation */
+        header img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            animation: slide-grow 5s infinite alternate; /* Apply the sliding & scaling animation */
         }
 
         footer {
@@ -156,7 +100,8 @@
 <body>
     <header>
         <h1>Sabīne Brikmane</h1>
-        <img src="download.jpg" alt="Profile Picture">
+        <!-- Profile image with animation -->
+        <img src="download.jpg" alt="Profile Picture"> <!-- Your profile image -->
     </header>
 
     <section class="about">
@@ -205,20 +150,18 @@
             </tbody>
         </table>
     </section>
-  
+
     <section class="extra-info">
         <h2>Papildu Informācija</h2>
-        <p>Es esmu ļoti interesēta par mašīnām, dievinu tās un visu ap to. Patīk brīvajā laikā lasīt grāmats, sportot, ceļot, ķert skaistus skatus(fotogrāfēt), pavadīt laiku ar man svarīgiem cilvēkiem, mācos dažādas svešvalodas(spāņu, vācu valodu...).</p>
-       
+        <p>Es esmu ļoti interesēta par mašīnām, dievinu tās un visu ap to. Patīk brīvajā laikā lasīt grāmatas, sportot, ceļot, ķert skaistus skatus(fotogrāfēt), pavadīt laiku ar man svarīgiem cilvēkiem, mācos dažādas svešvalodas(spāņu, vācu valodu...).</p>
     </section>
+
     <section class="contact">
         <h2>Saziņa</h2>
         <ul>
             <li>E-pasts: <a href="mailto:ipb23.s.brikmane@vtdt.edu.lv">ipb23.s.brikmane@vtdt.edu.lv</a></li>
         </ul>
     </section>
-
-  
 
     <footer>
         <p>© 2024 Sabīne Brikmane</p>

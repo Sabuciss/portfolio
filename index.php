@@ -9,11 +9,18 @@ $mana_lidmasina = new Aircraft("Airbus", "A220-300", 120, 850);
 
 var_dump($mana_lidmasina);
 echo"<br><br>";
-$destinatio = new Destination("RIX", 56.924, 23.971 );
 
-var_dump($destinatio);
+$origin = new Destination("RIX", 56.924, 23.971 );
+var_dump($origin);
+echo"<br><br>";
+$destination = new Destination("JKF", 40.6413, -73.7781);
+$departure_time = new DateTime();
 
-$flight = new Flight("SA503", "Rīga", "Stokholma", $departureTime, $aircraft);
+$flight = new Flight("SA503", $origin , $destination , $departure_time , $mana_lidmasina);
 
-echo $flight->getFlightInfo();
+ var_dump($flight);
 
+
+echo "<br>" . $flight->getDistance();
+
+echo "<br>" . $flight->getDuration();

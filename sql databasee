@@ -1,0 +1,25 @@
+<?php
+
+//izvadīt 1. lietotāju
+
+echo "strāda  ";
+ 
+$connection = new mysqli("localhost", "root", "", "veikals");
+
+// $sql = "SELECT * FROM users";
+//var_dump($connection);
+
+$result = $connection->query("SELECT * FROM users");  //query - metode
+$data = $result->fetch_assoc();// asoc paņem tikai pirmo vērtību all paņemtu visas vērtības
+
+
+var_dump($data);
+
+//echo "$data[id]";
+var_dump($data["id"]);
+echo"<forms>";
+echo"</forms>";
+
+
+// ielikt lietotāju no html formas
+?>

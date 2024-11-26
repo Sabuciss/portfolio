@@ -1,25 +1,68 @@
 <?php
+echo "<style>
+    body{
+    background-color: #558580;
+    color: #c3c8e3 ;
+    }
 
+</style>";
 //izvadīt 1. lietotāju
 
 echo "strāda  ";
  
-$connection = new mysqli("localhost", "root", "", "veikals");
+
 
 // $sql = "SELECT * FROM users";
 //var_dump($connection);
-
+$connection = new mysqli("localhost", "root", "", "veikals");
 $result = $connection->query("SELECT * FROM users");  //query - metode
 $data = $result->fetch_assoc();// asoc paņem tikai pirmo vērtību all paņemtu visas vērtības
-
+print_r($data);
 
 var_dump($data);
 
 //echo "$data[id]";
 var_dump($data["id"]);
-echo"<forms>";
-echo"</forms>";
 
+echo"<br>";
+echo"<pre>";
+var_dump($_SERVER);
+echo"</pre>";
+
+if ($_SERVER ["REQUEST_METHOD"] == "POST"){
+    //echo"<h1 style ='colour:red'>Es saņēmu POST</h1>";
+    $usurname = $_POST["👍"];    //lai mēs varētu metodes pēc tam izmantot
+    $password = $_POST["🌹"];
+    
+    $sql = "INSERT INTO users (usurname, pass)
+    VALUES ('$usurname', '$password');";
+    $connection->query($sql);
+}
 
 // ielikt lietotāju no html formas
+echo"<form method='POST'>";
+  echo "<lable>Lietotājvārds: <input  name='👍' placeholder='Lietotājvārds' /></lable> <br>";
+  echo "<lable>Parole:<input type='password' name='🌹' placeholder='Parole'/></lable> <br> ";
+  echo "<input type='submit' value='Reģistrēties' /> ";
+echo"</form>";
+
+
+
+//pastīties cik daudz reizes ir uzspiests pogas
+
+
+
+
+
+
+
+
+
+//masīvu veidi   control + /
+// $auglis = ["sarkans", "ābols", 120];
+// print_r($auglis);
+// php arrays asociatīvais masīvs
+// $auglisAssoc = ["color"=>"sarkans","type"=>"ābols","weight"=>120];
+// print_r($auglisAssoc);
+
 ?>

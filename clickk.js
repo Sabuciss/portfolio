@@ -17,5 +17,5 @@ let mainig = 0 ;
 function clickk(){
       console.log("strada");
       mainig=mainig + 1 ; 
-document.getElementById("poga").innerHTML= mainig;
+document.getElementById("poga").textContent= mainig;
   }
